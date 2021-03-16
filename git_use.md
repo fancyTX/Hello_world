@@ -452,6 +452,8 @@ rebase停止
 
 ## 8.Gitee关联
 
+### 8.1 Gitee单独关联
+
 创建本地ssh并连接至服务器
 
 > 1. Gitee网页创建新项目
@@ -472,3 +474,28 @@ rebase停止
 ```
 
 <div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316140403419.png" alt="image-20210316140403419" style="zoom:80%;" />
+
+### 8.2Github与Gitee同时关联
+
+> 1. 分别生成2个ssh-key
+> 2. 在 ~/.ssh 目录下新建一个config文件，添加如下内容（其中Host和HostName填写git服务器的域名，IdentityFile指定私钥的路径）
+> 3. 用ssh命令分别测试
+
+```
+1  ssh-keygen -t rsa -C "2361288384@qq.com" -f ~/.ssh/gitee_id_rsa
+   ssh-keygen -t rsa -C "2361288384@qq.com" -f ~/.ssh/github_id_rsa
+2   # gitee
+	Host gitee.com
+	HostName gitee.com
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/gitee_id_rsa
+	# github
+	Host github.com
+	HostName github.com
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/github_id_rsa
+3  ssh -T git@gitee.com
+   ssh -T git@github.com
+```
+
+<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316162313929.png" alt="image-20210316162313929" style="zoom:80%;" />
