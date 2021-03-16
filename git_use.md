@@ -58,13 +58,6 @@
 4  ssh -T git@github.com
 ```
 
-<div align=left><img src="C:\Users\23612\Pictures\Saved Pictures\研究生录取\git1.PNG" style="zoom:50%;" /></div>
-
-<div align=left><img src="C:\Users\23612\Pictures\Saved Pictures\研究生录取\git2.PNG" style="zoom:50%;" />
-
-<div align=left><img src="C:\Users\23612\Pictures\Saved Pictures\研究生录取\git3.PNG" style="zoom:55%;" />
-
-<div align=left><img src="C:\Users\23612\Pictures\Saved Pictures\研究生录取\git5.PNG" style="zoom:60%;" /></div>
 
 
 ## 3.创建本地版本库
@@ -82,7 +75,7 @@ git add XXX
 git commit -m "message"
 git diff
 ```
-<div align=left><img src="C:\Users\23612\Pictures\Saved Pictures\研究生录取\git4.PNG" style="zoom:60%;" /></div>
+
 
 
 ## 4.添加、删除文件等操作
@@ -99,16 +92,10 @@ git add git_install.md
 git commit -m "增加git安装与配置内容"
 ```
 
- <div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210312153034130.png" alt="image-20210312153034130" style="zoom:60%;" /></div>
-
 ### 4.2回退与还原
 + 回退到上一版本```git reset --hard HEAD^```
 
-    <div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210312154431457.png" alt="image-20210312154431457" style="zoom:80%;" /></div>
-
 + 命令行界面未切换时还原到新版本，用版本号还原，前几位。借用HEAD指针。
-
-    <div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210312154656406.png" alt="image-20210312154656406" style="zoom:80%;" /></div>    
 
 + 已切换命令行界面时，要用提交号```commit-id```还原。
   
@@ -129,8 +116,7 @@ git commit -m "增加git安装与配置内容"
     git rm file
     git commit -m "删除 git_repository/git_install.md"
     ```
-    <div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210312161221470.png" alt="image-20210312161221470" style="zoom:80%;" />
-
+    
 + 删错了，版本库里还有，把误删的文件恢复到最新版本
     `git checkout -- file`
 ### 4.5查看历史文件修改记录
@@ -141,8 +127,6 @@ git commit -m "增加git安装与配置内容"
   git log   
   git log --pretty=oneline
   ```
-  <div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210312153808675.png" alt="image-20210312153034130" style="zoom:60%;" /></div>
-  
 ### 4.6查看历史指令
 `git reflog`
 
@@ -152,7 +136,6 @@ git commit -m "增加git安装与配置内容"
 
 `git config --global alias.st status`
 
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316141006487.png" alt="image-20210316141006487" style="zoom:100%;" />
 
 
 
@@ -177,7 +160,6 @@ git commit -m "增加git安装与配置内容"
 1  git remote -v
 2  git remote rm origin
  ```
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210312165339524.png" alt="image-20210312165339524" style="zoom:80%;" />   
 
 ### 5.3从远程库克隆
 > 1. 在网页创建新仓库`gitskills`
@@ -187,7 +169,6 @@ git commit -m "增加git安装与配置内容"
 2  git clone https://github.com/fancyTX/gitskills.git 
 3  cd gitskills; ls
 ```
- <div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210312183704228.png" alt="image-20210312183704228" style="zoom:80%;" />
 
 
 
@@ -230,9 +211,6 @@ Git创建一个分支很快，因为除了增加一个`dev`指针，改改`HEAD`
 7  git branch -d dev
 8  git branch
 ```
- <div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210312195616494.png" alt="image-20210312195616494" style="zoom:80%;" />
-
-
 + 分支管理策略
 master分支应该是非常稳定,平时不能在上面干活。干活都在dev分支上，dev分支是不稳定的。
   比如1.0版本发布时，再把dev分支合并到master上，在master分支发布1.0版本；
@@ -263,7 +241,6 @@ git merge --no-ff -m "merge with no-ff" dev
 4  git merge feature1
 ```
 
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210312201343018.png" alt="image-20210312201343018" style="zoom:80%;" />
 
 要手动解决冲突，要先找到冲突文件，查看文本信息发现Git自己用`<<<<<<<，=======，>>>>>>>`标记出不同分支的内容, 进行修改。
 > 1. 找出冲突文件
@@ -277,9 +254,6 @@ git merge --no-ff -m "merge with no-ff" dev
 4  git branch -d feature1
 ```
 
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210312202413272.png" alt="image-20210312202413272" style="zoom:80%;" />
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210312201645609.png" alt="image-20210312201645609" style="zoom:80%;" />
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210312202621544.png" alt="image-20210312202621544" style="zoom:80%;" />
 
 ### 6.4Bug分支
 
@@ -300,7 +274,6 @@ git merge --no-ff -m "merge with no-ff" dev
 6  git branch -d issue-101
 ```
 
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316101350824.png" alt="image-20210316101350824" style="zoom:80%;" />
 
 先暂存工作现场，然后修复bug，再回到工作现场；
 
@@ -321,9 +294,6 @@ git merge --no-ff -m "merge with no-ff" dev
 5  git stash;git stash apply stash@{0}
 ```
 
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316101809880.png" alt="image-20210316101809880" style="zoom:80%;" />
-
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316102000431.png" alt="image-20210316102000431" style="zoom:80%;" />
 
 在master分支上修复的bug，想要合并到当前dev分支，可只复制所提交的修改，避免重复劳动。
 
@@ -354,9 +324,6 @@ git merge --no-ff -m "merge with no-ff" dev
    git branch -D feature-vulcan 
 ```
 
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316104023878.png" alt="image-20210316104023878" style="zoom:80%;" />
-
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316104133615.png" alt="image-20210316104133615" style="zoom:80%;" />
 
 ### 6.6多人协作
 
@@ -412,7 +379,6 @@ rebase停止
 
 `git reflog; git reset --hard commit-id  `
 
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316155013221.png" alt="image-20210316155013221" style="zoom:80%;" />
 
 ## 7.标签管理
 
@@ -443,11 +409,6 @@ rebase停止
    git push origin --tags  #推送全部标签
 ```
 
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316111743775.png" alt="image-20210316111743775" style="zoom:80%;" />
-
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316111831289.png" alt="image-20210316111831289" style="zoom:80%;" />
-
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316134036892.png" alt="image-20210316134036892" style="zoom:80%;" />
 
 
 ## 8.Gitee关联
@@ -473,7 +434,6 @@ rebase停止
    git push gitee master
 ```
 
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316140403419.png" alt="image-20210316140403419" style="zoom:80%;" />
 
 ### 8.2Github与Gitee同时关联
 
@@ -498,4 +458,4 @@ rebase停止
    ssh -T git@github.com
 ```
 
-<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316162313929.png" alt="image-20210316162313929" style="zoom:80%;" />
+
