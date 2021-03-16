@@ -404,7 +404,15 @@ git rebase
 git log --graph --pretty=oneline --abbrev-commit
 ```
 
+rebase停止
 
+`git rebase  --quit`
+
+发现删除错误，撤销rebase操作：先查看本地记录找到commit-id，然后恢复
+
+`git reflog; git reset --hard commit-id  `
+
+<div align=left><img src="C:\Users\23612\AppData\Roaming\Typora\typora-user-images\image-20210316155013221.png" alt="image-20210316155013221" style="zoom:80%;" />
 
 ## 7.标签管理
 
